@@ -2,7 +2,7 @@
 import './ExpenseItem.css';
 //We can import other components into components...
 import ExpenseDate from './ExpenseDate';
-import Card from './Card'
+import Card from '../UI/Card';
 
 //First react componenet
 //A React component is just a JS function
