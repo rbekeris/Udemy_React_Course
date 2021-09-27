@@ -3,10 +3,15 @@ import './Expenses.css';
 //We can import other components into components...
 import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
+import ExpensesFilter from './ExpensesFilter';
 
 function Expenses(props) {
+    const pickedFilteryearHandler = (yearValue) =>{
+        console.log(yearValue);
+    };
     return (
         <Card className="expenses">
+            <ExpensesFilter onYearSelection={pickedFilteryearHandler}/>
               <ExpenseItem
                 title={props.items[0].title}
                 amount={props.items[0].amount}
