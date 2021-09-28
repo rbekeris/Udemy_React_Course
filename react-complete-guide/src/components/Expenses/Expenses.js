@@ -26,13 +26,14 @@ function Expenses(props) {
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
               {/* We use map function to render an ExpenseItem for each value in the
               expense array. In this case "expense" is how we call each single eement in the array*/}
-              {filteredExpenses.map( (expense) => (
+              {filteredExpenses.length === 0 ? (<p>No Spending</p>) : (filteredExpenses.map( (expense) => (
               <ExpenseItem
                key ={expense.id}
                title ={expense.title}
                amount={expense.amount}
                date = {expense.date}/>
-               ))}
+               )))}
+
         </Card>
     )
 }
