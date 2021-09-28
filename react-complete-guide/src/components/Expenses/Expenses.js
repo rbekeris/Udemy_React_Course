@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 //We import the necesary component css
 import './Expenses.css';
 //We can import other components into components...
-import ExpenseItem from './ExpenseItem';
 import Card from '../UI/Card';
 import ExpensesFilter from './ExpensesFilter';
+import ExpensesList from './ExpensesList';
 
 function Expenses(props) {
     const [filteredYear, setFilteredYear] = useState('2021')
@@ -24,16 +24,7 @@ function Expenses(props) {
     return (
         <Card className="expenses">
             <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-              {/* We use map function to render an ExpenseItem for each value in the
-              expense array. In this case "expense" is how we call each single eement in the array*/}
-              {filteredExpenses.length === 0 ? (<p>No Spending</p>) : (filteredExpenses.map( (expense) => (
-              <ExpenseItem
-               key ={expense.id}
-               title ={expense.title}
-               amount={expense.amount}
-               date = {expense.date}/>
-               )))}
-
+              <ExpensesList items={filteredExpenses} />
         </Card>
     )
 }

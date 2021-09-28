@@ -10,7 +10,7 @@ import React from 'react';
 
 function ExpenseItem(props) {
     return (
-        //Custom components must be configured to support "extra css" -while in-built components support them out of the box
+        <li>
         <Card className="expense-item">
             <ExpenseDate date={props.date}></ExpenseDate>
             <div className="expense-item__description">
@@ -19,6 +19,7 @@ function ExpenseItem(props) {
                 <div className="expense-item__price">{props.amount}</div>
             </div> 
         </Card>
+        </li>
     )
 }
 
