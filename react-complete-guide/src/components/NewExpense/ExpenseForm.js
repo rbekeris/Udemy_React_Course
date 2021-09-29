@@ -29,7 +29,7 @@ const ExpenseForm = (props) => {
         //we can refer to all state values and combine them in one object
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
         //Upon form submission we use the function passed to this child component
