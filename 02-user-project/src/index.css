@@ -1,0 +1,13 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  background-image: url('./components/Images/Ford.jpg');
+}
+
+body {
+  margin: 0;
+}
