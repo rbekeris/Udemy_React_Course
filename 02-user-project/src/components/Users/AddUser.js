@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import clsases from './AddUser.module.css';
 //custom component names start with capital letter
 import Button from '../UI/Button';
+import ErrorModal from '../UI/ErrorModal';
 
 const AddUser = props => {
     const [enteredUsername, setEnteredUsername] = useState();
@@ -18,7 +19,7 @@ const AddUser = props => {
             return;
         }
 
-        console.log(enteredUsername, enteredAge)
+        props.onAddUser(enteredUsername, enteredAge);
         setEnteredUsername('');
         setEnteredAge('');
     };
@@ -31,6 +32,8 @@ const AddUser = props => {
     };
 
     return (
+        <div>
+    <ErrorModal title ="An Error occured" message="Something went wrong" />
     <Card className={clsases.input}>
     <form onSubmit={addUserHandler}>
         <label htmlFor="username">Username</label>
@@ -40,6 +43,7 @@ const AddUser = props => {
         <Button type="submit">Add User</Button>
     </form>
     </Card>
+    </div>
     );
 };
 
